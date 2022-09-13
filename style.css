@@ -1,0 +1,44 @@
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    min-width: 400px;
+}
+
+button{
+    background-color: green;
+    color: white;
+    padding: 15px 30px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border-color: black;
+    cursor: pointer;
+
+}
+
+input{
+    padding-left: 10px ;
+    padding-right: 10px ;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: green;
+    width: 100%;
+    box-sizing: border-box; 
+}
+
+ul{
+  list-style: none;
+  padding-left: 5px;
+  margin-top: 25px;
+
+}
+
+li{
+ margin-top: 7px;
+}
+
+a{
+    color: green;
+}

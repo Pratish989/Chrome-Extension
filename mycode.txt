@@ -1,0 +1,87 @@
+// next steps
+// create two vaiables 
+// myLeads -> should be assigned to an empty Array
+// inputEl -> should be assigned to text input field
+// www.awesomelead.com","www.epiclead.com","www.greatlead.com
+
+
+let myLeads =`["www.awesomeleads.com"]`// local storage do not store value in array so we have to convert into string.
+
+myLeads = JSON.parse(myLeads) // 
+myLeads.push("www.epiclead.com")
+myLeads = JSON.stringify(myLeads)
+console.log(typeof myLeads)
+
+
+console.log(myLeads)
+// let myLeads =[]
+const inputEl = document.getElementById("input-el")
+const inputBtn = document.getElementById("input-btn")
+const ulEl = document.getElementById("ul-el")
+
+
+localStorage.setItem("google","google.com")
+localStorage.setItem("yahoo","yahoo.com")
+localStorage.setItem("alphabet","aphabet.com")
+
+localStorage.getItem("google")
+// localStorage.clear()
+// step 4 create this ulEl variable
+
+// next step 1 - push the value "www.awesomelead.com" to myArray when input button is clicked.
+
+// step 2 now push the value from the input field.
+// SYNTAX - document.getElementById("input-el").value
+
+inputBtn.addEventListener("click", function (){
+    myLeads.push(inputEl.value)
+    inputEl.value = " "
+    localStorage.setItem("myLeads", JSON.stringify(myLeads))
+    // localStorage.setItem("myLeads", JSON.stringify(myLeads) )
+
+    // if you want to clear out the input after youhave given it or typed it. 
+    renderLeads()
+    console.log(localStorage.getItem("myLeads"))
+ })
+
+// step 3 log out items in myLeaads array using a for loop
+// step 5 render the leads in unordered lists using ulEl.textContent
+
+
+
+function renderLeads(){
+    let listItems =" "
+
+for(i = 0; i<myLeads.length ;i++) {
+
+    // listItems +=  "<li> <a target = '_blank 'href='" + myLeads[i] + "'>"  + myLeads[i]  + "</a></li>" 
+    listItems +=  `
+    <li>
+        <a target = '_blank' href='${myLeads[i]}'>   
+            ${myLeads[i]}
+        </a>
+    </li>
+    `
+//    const li =  document.createElement("li")
+//     li.textContent = myLeads[i]
+//     ulEl.append(li)
+}
+
+
+ulEl.innerHTML = listItems
+}
+
+
+
+//innerHTML - browser ignores the html elements - just as we have seen above code.
+
+ // step 6 instead of using innerHTML we have another way also.
+ // createelement and append 
+
+//  document.createElement("li")
+// li.textContent = myLeads[i]
+// ulEl.append = li
+
+
+
+  
